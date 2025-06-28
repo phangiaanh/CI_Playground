@@ -42,6 +42,7 @@ func main() {
 	if len(args) != 0 {
 		usage()
 	}
+	// TODO
 
 	// Register handlers.
 	// All requests not otherwise mapped with go to greet.
