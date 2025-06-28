@@ -43,9 +43,6 @@ func main() {
 		usage()
 	}
 
-	sec := "aksjhdjhu242AS@"
-	log.Printf("serving http://%s\n", sec)
-
 	// Register handlers.
 	// All requests not otherwise mapped with go to greet.
 	// /version is mapped specifically to version.
