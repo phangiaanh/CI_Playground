@@ -28,11 +28,11 @@ func TestGreet(t *testing.T) {
 			path:     "/Alice",
 			expected: "HelloTest, Alice!",
 		},
-		// {
-		// 	name:     "html escape",
-		// 	path:     "/<script>",
-		// 	expected: "HelloTest, &lt;script&gt;!",
-		// },
+		{
+			name:     "html escape",
+			path:     "/<script>",
+			expected: "HelloTest, &lt;script&gt;!",
+		},
 	}
 
 	for _, tt := range tests {
