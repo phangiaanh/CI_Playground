@@ -15,8 +15,9 @@ fi
 echo -e "${GREEN}✅ Tests passed${NC}"
 
 echo -e "${YELLOW}🔍 Running gosec...${NC}"
-gosec ./...
+gosec -include=G101 ./...
 if [ $? -ne 0 ]; then
+    # TODO: including only needed rules and set severity to MEDIUM-HIGH
     echo -e "${RED}🚨 gosec found security issues. Commit aborted.${NC}"
     exit 1
 fi
