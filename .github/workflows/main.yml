@@ -19,6 +19,9 @@ jobs:
         run: |
           go test -coverprofile=coverage.out ./...
           go tool cover -func=coverage.out > coverage.txt
+          echo "coverage_body<<EOF" >> $GITHUB_ENV
+          cat coverage.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: Comment coverage on PR
         uses: peter-evans/create-or-update-comment@v3
@@ -28,5 +31,5 @@ jobs:
           body: |
             ## 🧪 Code Coverage
             ```
-            $(cat coverage.txt)
+            ${{ env.coverage_body }}
             ```
